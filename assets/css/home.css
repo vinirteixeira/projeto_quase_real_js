@@ -1,11 +1,14 @@
 header {
     display: flex;
-    padding-right: 300px;
+    
 }
 span {
     width: min-content;
 }
+.user {
+    padding-right: 200px;
+}
+
 button {
-    right: 200px;
-    background-color: aqua;
+ margin-left: 800px;
 }
