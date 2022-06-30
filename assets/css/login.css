@@ -1,0 +1,15 @@
+form {
+    width: 500px;
+    margin-left: 20%;
+    padding-top: 75px;
+}
+button {
+    width: 100px;
+    color: black;
+    background-color: rgb(64, 124, 64);
+    border-radius: 5px;
+ }
+
+ a {
+    padding-right: 15px;
+ }

@@ -1,0 +1,11 @@
+header {
+    display: flex;
+    padding-right: 300px;
+}
+span {
+    width: min-content;
+}
+button {
+    right: 200px;
+    background-color: aqua;
+}
