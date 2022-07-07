@@ -129,3 +129,23 @@ btnFiltraApenasEstoque.onclick = () => {
 //     exibirProdutos(vetorProduto);
 //     estadoFiltroEstoque = false ;
 // }
+
+let estadoFiltroDolar = false;
+
+const btnDolarValue = document.getElementById('Dolar');
+btnDolarValue.onclick = () => {
+    estadoFiltroDolar = !estadoFiltroDolar;
+    if (estadoFiltroDolar) {
+        const vetorFiltrado = vetorProduto.map(converterDolar);
+        exibirProdutos(vetorFiltrado);
+        btnDolarValue.innerText = "Valor em Real"
+    }
+    else {
+        exibirProdutos(vetorProduto);
+        btnDolarValue.innerText = "Valor em Dólar"
+    }
+        
+}
+
+const mediaNaTela = document.getElementById('mediaEmTela')
+
