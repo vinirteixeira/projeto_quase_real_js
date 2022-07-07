@@ -7,21 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="./../assets/css/default.css">
     <link type="text/css" rel="stylesheet" href="./../assets/css/home.css">
+    <link type="text/css" rel="stylesheet" href="./../assets/css/produtos.css">
     <title>Home</title>
 </head>
 
 <body>
     <header>
         <div class="user">
-            <span id="usuario-logado"></span> 
+            <span id="usuario-logado"></span>
             
-            <button type="button" onclick="logout()">Logout</button>
-                        
         </div>
         
-    </header>
-    <script type="text/javascript"src="../assets/js/home.js"></script>
 
+    </header>
+    <button type="button" onclick="logout()">Logout</button>
+    <br><br>
+    <div class="buttonsfilters">
+        <!-- <button type="button" id="All01">Todos Produtos</button> -->
+        <button type="button" id="filtro01">Produtos Disponíveis</button>
+    </div>
+    <br>
+   
+    <div id="lista-produtos"></div>
+    
+    <script type="text/javascript" src="../assets/js/home.js"></script>
+    <script type="text/javascript" src="../assets/js/funcoes_funcionais.js"></script>
 
 </body>
 

@@ -1,0 +1,20 @@
+#lista-produtos {
+    display: flex;
+    margin-left: 100px;
+    align-content: space-between;
+    flex-wrap: wrap;
+    font-size: .9em;
+    
+}
+
+.produto {
+    width: 120px;
+    border: solid;
+    padding: 1.5em;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #484848;
+    color: bisque;
+    border-color: azure;
+    
+}

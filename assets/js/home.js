@@ -9,8 +9,9 @@ elemento_usuario_logado.innerText = `Olá ${nome_usuario_logado} ${user_surname}
 const logout = () => {
     const confirma = confirm(`Tem certeza?`)
         if (confirma == true) {
-            localStorage.removeItem("usuarioLogado");
-            localStorage.removeItem("userSurname");
+            //localStorage.removeItem("usuarioLogado");
+            //localStorage.removeItem("userSurname");
+            localStorage.clear(); //para logout geralmente usado clear
             window.location.href = "../index.html";
     }
 }

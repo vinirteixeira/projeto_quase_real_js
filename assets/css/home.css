@@ -1,14 +1,13 @@
 header {
     display: flex;
     
-}
+};
 span {
     width: min-content;
-}
+};
 .user {
     padding-right: 200px;
-}
-
-button {
- margin-left: 800px;
+};
+#buttonsfilters {
+    margin-right: 10px;
 }
