@@ -7,9 +7,9 @@ function renderiza_foto(foto){
 fetch("https://api.github.com/users/vinirteixeira")
 .then(response => response.json()) // para status 200
 .then(data => {
-      
     console.log(data);
     renderiza_foto(data.avatar_url);
+    document.getElementById('nome').innerText = data.name;
 })
     
 .catch( error => { // para status de erro
