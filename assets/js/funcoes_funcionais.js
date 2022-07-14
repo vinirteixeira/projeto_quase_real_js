@@ -33,13 +33,13 @@ const vetorProduto = [
 
     {
         "produto": "Produto 05",
-        "preco": 30.90,
+        "preco":   30.90 ,
         "descricao": "Lorem Ipusum! Not ipusum! outro ipusum!",
         "em_estoque": true,
         "img": "assets/IMG/img0003.jpg"
     },
 ];
-
+ let vetorFiltrado02 = [];
 /**
  * filter (filtra algum elemento)
  * map (altera algo de todos vetores Ex: converter real - dólar)
@@ -58,9 +58,11 @@ console.log('Filter:', produtos_em_estoque);
 
 const converterDolar = (elemento) => {
     const newElemento = { ...elemento };
-    newElemento.preco = newElemento.preco / 5.43;
+    newElemento.preco = (newElemento.preco / 5.43);
     return newElemento;
 };
+
+
 
 const produtos_em_dolar = vetorProduto.map(converterDolar);
 console.log('Map:', produtos_em_dolar);
@@ -88,7 +90,7 @@ for (let elemento of vetorProduto) {
     const divProduto = `<div class="produto">
     <h1>${elemento.produto}</h1>
     <p>${elemento.descricao}</p>
-    <h5>${elemento.preco}</h5>
+    <h5>${elemento.preco.toFixed(2)}</h5>
     </div>`;
     divListaProdutos.innerHTML += divProduto
 
@@ -100,7 +102,7 @@ const exibirProdutos = (vetor) => {
         const divProduto = `<div class="produto">
         <h1>${elemento.produto}</h1>
         <p>${elemento.descricao}</p>
-        <h5>${elemento.preco}</h5>
+        <h5>${elemento.preco.toFixed(2)}</h5>
         </div>`;
         divListaProdutos.innerHTML += divProduto
 
@@ -114,15 +116,20 @@ const btnFiltraApenasEstoque = document.getElementById('filtro01');
 btnFiltraApenasEstoque.onclick = () => {
     estadoFiltroEstoque = !estadoFiltroEstoque;
     if (estadoFiltroEstoque) {
-        const vetorFiltrado = vetorProduto.filter(emEstoque);
-        exibirProdutos(vetorFiltrado);
+        vetorFiltrado02 = vetorProduto.filter(emEstoque);
+        exibirProdutos(vetorFiltrado02);
         btnFiltraApenasEstoque.innerText = "Todos os produtos"
+        mediaEmTela(vetorFiltrado02)
     }
     else {
-        exibirProdutos(vetorProduto);
+        vetorFiltrado02 = vetorProduto;
+        exibirProdutos(vetorFiltrado02);
         btnFiltraApenasEstoque.innerText = "Filtrar apenas produtos disponíveis"
+        mediaEmTela(vetorFiltrado02)
     }
 }
+
+
 
 // const btnAllProducts = document.getElementById(`All01`);
 // btnAllProducts.onclick = () => {
@@ -136,16 +143,29 @@ const btnDolarValue = document.getElementById('Dolar');
 btnDolarValue.onclick = () => {
     estadoFiltroDolar = !estadoFiltroDolar;
     if (estadoFiltroDolar) {
-        const vetorFiltrado = vetorProduto.map(converterDolar);
+        const vetorFiltrado = vetorFiltrado02.map(converterDolar);
         exibirProdutos(vetorFiltrado);
-        btnDolarValue.innerText = "Valor em Real"
+        btnDolarValue.innerText = "Valor em Real (R$)"
+        mediaEmTela(vetorFiltrado)
     }
     else {
-        exibirProdutos(vetorProduto);
-        btnDolarValue.innerText = "Valor em Dólar"
+        exibirProdutos(vetorFiltrado02);
+        btnDolarValue.innerText = "Valor em Dolar (U$)"
+        mediaEmTela(vetorFiltrado02)
     }
-        
+
 }
 
 const mediaNaTela = document.getElementById('mediaEmTela')
+    mediaEmTela = (vetor) => {
+        const media_preco = vetor.reduce(somaPrecos, 0);
+        if (estadoFiltroDolar == true){
+        mediaNaTela.innerHTML = `<h5>A média dos valores dos produtos em tela é U$ ${media_preco.toFixed(2)}</h5>`;
+        }
+        else
+        mediaNaTela.innerHTML = `<h5>A média dos valores dos produtos em tela é R$ ${media_preco.toFixed(2)}</h5>`;
+    }
 
+
+
+    

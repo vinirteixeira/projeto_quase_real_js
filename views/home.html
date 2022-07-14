@@ -26,15 +26,31 @@
         <!-- <button type="button" id="All01">Todos Produtos</button> -->
         <button type="button" id="filtro01">Produtos Disponíveis</button>
         <button type="button" id="Dolar">Converter valor para Dólar</button>
-        <h5 id="mediaEmTela"></h5>
+        
     </div>
+    <div><div id="mediaEmTela"></div></div>
     <br>
    
     <div id="lista-produtos"></div>
     
     <script type="text/javascript" src="../assets/js/home.js"></script>
     <script type="text/javascript" src="../assets/js/funcoes_funcionais.js"></script>
+    <script type="text/javascript" src="../assets/js/requisicoes.js"></script>
 
 </body>
 
 </html>
+
+<!-- Status de REQUEST (USUÁRIO pedindo informações do BANCO DE DADOS)
+
+200 - 299 -> status ok
+300 - 399 -> status algo foi redirecionado
+400 - 499 -> alguma falha de cliente (faltando permissões, encontrar objetos)
+501 - 599 -> falha de servidor 
+
+POST -> INCLUIR ALGO NO BANCO
+UPDATE / PUT -> ALTERAR ALGO
+DELETE -> EXCLUIR
+GET -> SELECT NO BANCO
+
+-->
