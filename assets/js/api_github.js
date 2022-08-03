@@ -10,10 +10,10 @@ fetch("https://api.github.com/users/vinirteixeira")
     console.log(data);
     renderiza_foto(data.avatar_url);
     document.getElementById('nome').innerText = data.name;
-    document.getElementById('location').innerHTML += "Localização: " + data.location;
-    document.getElementById('seguindo').innerHTML += "Seguindo " + data.following + " pessoas";
-    document.getElementById('seguidores').innerHTML = "Sendo seguido por " + data.followers + " pessoas";
-    document.getElementById('repositories').innerHTML = "Total de repositórios (públicos) = " +data.public_repos;
+    document.getElementById('location').innerHTML = "Localização: " + data.location;
+    document.getElementById('seguindo').innerHTML = "Seguindo " + data.following + " pessoas: ";
+    document.getElementById('seguidores').innerHTML = "Sendo seguido por " + data.followers + " pessoas: ";
+    document.getElementById('repositories').innerHTML = "Total de repositórios (públicos) = " +data.public_repos + ": ";
 })
 
     
