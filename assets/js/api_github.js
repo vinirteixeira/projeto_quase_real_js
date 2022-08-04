@@ -10,7 +10,7 @@ function renderiza_foto(foto){
 }
 
 const headers = new Headers();
-    headers.append('Authorization', 'token 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',  );
+    headers.append('Authorization', 'token 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',  );
 
 fetch("https://api.github.com/users/vinirteixeira", {headers:headers})
 .then(response => response.json()) // para status 200
